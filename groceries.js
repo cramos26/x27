@@ -29,8 +29,9 @@ function displayItem (input) {
       iconClose.classList.add("glyphicon-remove");
       btnClose.addEventListener("click",removeParentListItem);
       btnClose.appendChild(iconClose);
-      item.appendChild(btnClose);
+
       item.appendChild(itemName);
+      item.appendChild(btnClose);
       list.appendChild(item);
     }
 }
