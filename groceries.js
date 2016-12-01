@@ -31,25 +31,7 @@ function displayItem (input) {
       item.appendChild(itemName);
       list.appendChild(item);
     }
-  var list = document.getElementById("listDisplay");
-  var item = document.createElement("li");
-  var itemName = document.createTextNode(input);
-  var btnClose = document.createElement("button")
-
-  btnClose.classList.add("btn");
-  btnClose.classList.add("btn-danger");
-  btnClose.classList.add("btn-xs");
-  var iconClose = document.createElement("span");
-  iconClose.classList.add("glyphicon");
-  iconClose.classList.add("glyphicon-remove");
-  btnClose.addEventListener("click",removeParentListItem);
-  btnClose.appendChild(iconClose);
-  item.appendChild(btnClose);
-  item.appendChild(itemName);
-  list.appendChild(item);
-  document.getElementById("newItem").innerHTML = "";
-  }
-
+    
   function loadCookieList () {
   var obtaincookies = getCookie("cookieforsavelist");
   var arrayCookie = obtaincookies.split(" ");
