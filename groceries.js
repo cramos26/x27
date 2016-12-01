@@ -1,5 +1,5 @@
-
 window.onload = loadCookieList;
+
 var myList = [];
 var Listinstring = "";
 var input = "";
@@ -11,11 +11,12 @@ function addItem(){
 }
 
 function displayItem (input) {
-      if (myList.indexOf(input) == -1)
+  var list = document.getElementById("listDisplay");
+      if (myList.indexOf(input) < 0)
 {
         myList.push(input);
         console.log(myList);
-      var list = document.getElementById("listDisplay");
+
       var item = document.createElement("li");
       var itemName = document.createTextNode(input);
       var btnClose = document.createElement("button")
@@ -35,8 +36,8 @@ function displayItem (input) {
 }
   function loadCookieList () {
   var obtaincookies = getCookie("cookieforsavelist");
-  var arrayCookie = obtaincookies.split(" ");
-  for ( i = 0; i < length.arrayCookie; i++ )
+  var arrayCookie = obtaincookies.split(",");
+  for ( i = 0; i < arrayCookie.length; i++ )
   { displayItem (arrayCookie[i]) }
   }
 
