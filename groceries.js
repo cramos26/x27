@@ -56,7 +56,7 @@ function removeParentListItem() {
 
 function saveList(){
 Listinstring = myList.toString();
-setCookie("cookieforsavelist", Listinstring , 1);
+setCookie("cookieforsavelist", Listinstring , -1);
 }
 
 function clearList() {
