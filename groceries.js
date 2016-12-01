@@ -14,27 +14,23 @@ function displayItem (input) {
       if (myList.indexOf(input) == -1){
         myList.push(input);
         console.log(myList);
-        var list = document.getElementById("listDisplay");
+      var list = document.getElementById("listDisplay");
+      var item = document.createElement("li");
+      var itemName = document.createTextNode(input);
+      var btnClose = document.createElement("button")
 
-        var item = document.createElement("li");
-        var itemName = document.createTextNode(input);
-        var btnClose = document.createElement("button")
-
-        btnClose.classList.add("btn");
-        btnClose.classList.add("btn-danger");
-        btnClose.classList.add("btn-xs");
-        var iconClose = document.createElement("span");
-        iconClose.classList.add("glyphicon");
-        iconClose.classList.add("glyphicon-remove");
-        btnClose.addEventListener("click",removeParentListItem);
-        btnClose.appendChild(iconClose);
-        item.appendChild(btnClose);
-        item.appendChild(itemName);
-        list.appendChild(item);
+      btnClose.classList.add("btn");
+      btnClose.classList.add("btn-danger");
+      btnClose.classList.add("btn-xs");
+      var iconClose = document.createElement("span");
+      iconClose.classList.add("glyphicon");
+      iconClose.classList.add("glyphicon-remove");
+      btnClose.addEventListener("click",removeParentListItem);
+      btnClose.appendChild(iconClose);
+      item.appendChild(btnClose);
+      item.appendChild(itemName);
+      list.appendChild(item);
     }
-
-
-
   var list = document.getElementById("listDisplay");
   var item = document.createElement("li");
   var itemName = document.createTextNode(input);
@@ -54,6 +50,12 @@ function displayItem (input) {
   document.getElementById("newItem").innerHTML = "";
   }
 
+  function loadCookieList () {
+  var obtaincookies = getCookie("cookieforsavelist");
+  var arrayCookie = obtaincookies.split(" ");
+  for ( i = 0; i < length.arrayCookie; i++ )
+  { displayItem (arrayCookie[i]) }
+  }
 
 function removeParentListItem() {
   var mom = this.parentNode;
@@ -75,18 +77,6 @@ document.getElementById("listDisplay").innerHTML = "";
 myList = [];
 }
 
-//* function displayItem () {
-// if (myList.indexOf(input) == -1){
-//  myList.push(input);
-//    console.log(myList);
-//}
-
-function loadCookieList () {
-var obtaincookies = getCookie("cookieforsavelist");
-var arrayCookie = obtaincookies.split(" ");
-for ( i = 0; i < length.arrayCookie; i++ )
-{ function displayItem (arrayCookie[i]) }
-}
 
 //courtesy of w3schools, from: http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
