@@ -11,7 +11,8 @@ function addItem(){
 }
 
 function displayItem (input) {
-      if (myList.indexOf(input) == -1){
+      if (myList.indexOf(input) == -1)
+{
         myList.push(input);
         console.log(myList);
       var list = document.getElementById("listDisplay");
@@ -31,7 +32,7 @@ function displayItem (input) {
       item.appendChild(itemName);
       list.appendChild(item);
     }
-    
+}
   function loadCookieList () {
   var obtaincookies = getCookie("cookieforsavelist");
   var arrayCookie = obtaincookies.split(" ");
